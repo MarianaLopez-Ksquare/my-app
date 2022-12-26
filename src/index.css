@@ -1,13 +1,298 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --main-color       : #52A5E0;
+  --title-color      : #EFF3F5;
+  --text-color       : #C8CDD0;
+  --light-text-color : #A0A7AC;
+  --border-color     : #1e2931;
+  --container-color  : #212E36;
+  --body-color       : #192229;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#root {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+body {
+  padding-top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0 0;
+  background-color: var(--body-color);
+}
+
+/* body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+} */
+.navBar {
+  height: 12%;
+  width: 100%;
+  margin: 0 0;
+  background-color: var(--container-color);
+  border-bottom: var(--border-color);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* padding: auto; */
+  position: fixed;
+  top: 0;
+}
+.logo {
+  height: auto;
+  width: 10%;
+  margin: 1%;
+  padding: 0;
+}
+.logo img {
+  width: 90%;
+  height: 50%;
+  margin: 0 auto;
+}
+
+.buttons {
+  width: 100%;
+  height: 120%;
+  padding: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.buttonHeader {
+  background: none;
+  border: none;
+  text-align: center;
+  font-size: 500%;
+  margin: 150px;
+  font-style: oblique;
+  font-weight: bold;
+  color: var(--title-color);
+  position: relative;
+  transition-duration: 0.4s;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.buttonHeader:hover {
+  background: var(--border-color);
+  border-color: #52A5E0;
+}
+
+.buttonHeader:after {
+  content: "";
+  background: #222220;
+  border-radius: 10px;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px!important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.buttonHeader:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+.userContent {
+  display: flex;  
+  justify-content: flex-end;
+  height: 60%;
+  display: flex;
+  width: 30%;
+  margin-right: 4%;
+  /* height: 100%; */
+}
+
+.userContent img {
+  border-radius: 50%;
+  width: auto;
+  height: 100%;
+  margin: auto 2%;
+  /* lets you create boxes that maintain proportional dimensions where the height and width of a box are calculated automatically */
+  aspect-ratio: 1; 
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 5%;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgShopContainer {
+  margin-left: 5%;
+  width: 40%;
+  height: 100%;
+  padding: auto auto;
+  display: flex;
+  flex-direction: column;
+}
+.bigImg {
+  width: 100%;
+  /* height: 80%; */
+  border-radius: 100px;
+  margin: 0%;
+}
+.bigImg img {
+  height: auto;
+  border-radius: 10px;
+  border-color: aqua;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+.smallImg {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  margin-top: 4%;
+}
+
+.smallImg img {
+  height: 50%;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 0px;
+  width: 100%;
+}
+
+.imgClick {
+  width: 100%;
+  height: auto;
+  border: 2px solid orange;
+  opacity: 0.5;
+}
+
+.infoContainer {
+  width: 50%;
+  height: 100%;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-top: 2%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+h3 {
+  color: var(--text-color);
+  font-size: 400%;
+  font-weight: bold;
+}
+h1 {
+  font-size: 600%;
+  color: var(--title-color);
+}
+p {
+  color: var(--text-color);
+  font-size: 350%;
+}
+
+span {
+  font-size: 100px;
+}
+
+.price {
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#currentPrice{
+  font-size: 200%;
+  color: var(--title-color); 
+  /* margin-left: 5%; */
+}
+
+#discount {
+  font-size: 125%;
+  color: var(--main-color); 
+  margin-left: 5%;
+  background-color: var(--container-color);
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+.realPrice {
+  display: flex;
+  align-self: flex-start;
+  margin: 0 0;
+  justify-content: flex-start;
+  color: var(--text-color);
+  width: 100%;
+}
+.realPrice h2 {
+  font-size: 110% ;
+  text-align: center; 
+  /* border-bottom: 10px solid #000;  */
+  /* line-height: 100%; */
+  /* margin: 10px 0 20px;  */
+}
+
+.hr-lines:before{
+  content:" ";
+  display: block;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: rgb(141, 43, 43);
+}
+.hr-lines{
+  position: relative;
+}
+
+.buttonsCart {
+  align-self: flex-start;
+  display: flex;
+  justify-content: flex-start;
+  height: 200px;
+  width: 100%;
+  margin-top: 5%;
+}
+
+
+.incrementador {
+  background-color: #f7f8fd;
+  display: flex;
+  width: 40%;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.incrementador button {
+  font-size: 600%;
+  border-color: none;
+  color: orange;
+  font-size: 100px;
+  background: none;
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+.addCart {
+  font-size: 100px;
+  margin-left: 2%;
+  width: 100%;
+  border-radius: 10px;
+  background: orange;
 }
